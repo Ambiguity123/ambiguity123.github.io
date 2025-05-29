@@ -1,12 +1,110 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Ambiguity</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body style="font-family: sans-serif; text-align: center; padding: 3em;">
-    <h1>Welcome to Ambiguity</h1>
-    <p>This is your portfolio site — it's now live.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ambiguity</title>
+  <style>
+    :root {
+      --bg: #A57152;
+      --accent-dark: #2F355E;
+      --accent-mid: #008C8A;
+      --accent-light: #FDE7B3;
+      --accent-white: #fff;
+    }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: var(--bg);
+      color: var(--accent-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--accent-dark);
+      color: var(--accent-white);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    header a {
+      color: var(--accent-white);
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid var(--accent-white);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 1200px;
+      padding: 2rem;
+    }
+    .art-piece {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .art-piece img {
+      width: 100%;
+      height: auto;
+      display: block;
+      pointer-events: none;
+    }
+    .watermark {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background-color: rgba(47, 53, 94, 0.8);
+      color: white;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      pointer-events: none;
+    }
+    footer {
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ambiguity</h1>
+    <a href="mailto:you@example.com">Contact</a>
+  </header>
+
+  <main class="gallery">
+    <div class="art-piece">
+      <img src="art/piece1_watermarked.png" alt="Artwork 1">
+      <div class="watermark">© ambiguity.art</div>
+    </div>
+    <div class="art-piece">
+      <img src="art/piece2_watermarked.png" alt="Artwork 2">
+      <div class="watermark">© ambiguity.art</div>
+    </div>
+    <div class="art-piece">
+      <img src="art/piece3_watermarked.png" alt="Artwork 3">
+      <div class="watermark">© ambiguity.art</div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Ambiguity. All rights reserved.
+  </footer>
+</body>
 </html>
